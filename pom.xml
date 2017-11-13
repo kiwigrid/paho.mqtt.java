@@ -4,7 +4,7 @@
 	<groupId>org.eclipse.paho</groupId>
 	<artifactId>java-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.2.0</version>
+	<version>1.2.666</version>
 
 	<properties>
 		<!-- source & target java version for MQTT Client -->
@@ -56,9 +56,9 @@
 
 	<distributionManagement>
 		<repository>
-			<id>repo.eclipse.org</id>
-			<name>Paho Repository - Releases</name>
-			<url>https://repo.eclipse.org/content/repositories/paho-releases/</url>
+			<id>kiwi-central</id>
+			<name>repo.dev.kiwigrid.com-releases</name>
+			<url>https://repo.dev.kiwigrid.com/artifactory/common-maven-releases</url>
 		</repository>
 		<snapshotRepository>
 			<id>repo.eclipse.org</id>
@@ -191,8 +191,8 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<!--
+			<!--plugin>
+				<!-
 					Use the Nexus Staging plugin as a full replacement for the standard
 					Maven Deploy plugin.
 					See https://github.com/sonatype/nexus-maven-plugins/tree/master/staging/maven-plugin
@@ -204,17 +204,17 @@
 					makes sure that all artifacts of a multi-module project are deployed as a whole
 					at the end of the build process instead of deploying each module's artifacts
 					individually as part of building the module.
-				 -->
+				 ->
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
 				<version>1.6.5</version>
 				<extensions>true</extensions>
 				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<serverId>kiwi-central</serverId>
+					<nexusUrl>https://repo.dev.kiwigrid.com/artifactory/</nexusUrl>
 					<autoReleaseAfterClose>false</autoReleaseAfterClose>
 				</configuration>
-			</plugin>
+			</plugin-->
 		</plugins>
 	</build>
 
